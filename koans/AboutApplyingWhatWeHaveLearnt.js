@@ -94,16 +94,16 @@ describe("About Applying What We Have Learnt", function() {
 			
     /* chain() together map(), flatten() and reduce() */
 		var ingredientCounter = ._(products).chain()
-														.map(function(product) { return product.ingredients; })
-														.flatten()
-														.reduce(function(ingredientsList, ingredient) {
-															if(ingredientsList[ingredient] === undefined) {
-																ingredientsList[ingredient] = 1;
-															}
-															else {
-																ingredientsList[ingredient]++;
-															}
-														}, ingredientCount).value();
+			.map(function(product) { return product.ingredients; })
+			.flatten()
+			.reduce(function(ingredientsList, ingredient) {
+				if(ingredientsList[ingredient] === undefined) {
+					ingredientsList[ingredient] = 1;
+				}
+				else {
+					ingredientsList[ingredient]++;
+				}
+			}, ingredientCount).value();
 
     expect(ingredientCount['mushrooms']).toBe(2);
   });
